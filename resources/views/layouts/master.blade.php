@@ -24,7 +24,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
 
     <link rel="canonical" href="http://muaxefordbinhthuan.com/">
         
@@ -41,7 +41,8 @@
     @yield('main')    
     
     {{---------------------}}        
-    <script src="/js/app.js"></script>    
+    <script src="/js/app.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>    
     <script>
         $.ajaxSetup({
             headers: {

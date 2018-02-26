@@ -1,0 +1,60 @@
+/* CSS Document */
+html {
+    SCROLLBAR-BASE-COLOR: #CCCCCC;
+    SCROLLBAR-ARROW-COLOR: #000000;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    padding-top: 80px;
+    min-height: 2000px;
+}
+
+/* {{--  NAVBAR  --}} */
+.header_top {
+    background: #004b80;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    right:0;
+    left: 0
+}
+.navbar-brand {
+    padding: 0px;
+}
+.navbar-brand>img {
+    height: 100%;
+    padding: 5px 60px 5px 30px ;
+    width: auto;
+}
+
+.header_bottom .navbar-nav > li > a {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+/* GRAVITY */
+.circ{
+    width : 40px;
+    vertical-align: middle;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #fff;
+    margin-top: 5px;
+    }
+.circ:hover{
+    box-shadow: 0 0 0 3px #f00;
+}
+
+/* SLIDER */
+.nivo-controlNav {
+    left: 45% !important;
+    bottom: 12px !important;
+}
