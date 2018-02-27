@@ -7,6 +7,7 @@
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/nivo-slider.css">
     <link rel="stylesheet" href="/css/themes-nivo/{{$theme_nivo or 'default'}}/{{$theme_nivo or 'default'}}.css">
+    
     <style>
         .slider-section {
             max-width:1280px;
@@ -23,7 +24,7 @@
 
 @section('main')
     {{--  SLIDER SECTION   --}}
-      <section class="slider-section">
+    <section class="slider-section">
         {{--  <div id="slider-wrapper" class="theme-{{ $theme_nivo }}">       --}}
             <div id="slider_show_slider" class="nivoSlider" style="height:418px">
                 @foreach ($slides as $slide)           
@@ -46,6 +47,91 @@
         {{--  </div>          --}}
     </section>     
 
+    <section class="list-car">
+        <div class="container">
+                <div class="list_product_focus">
+                    <div id="owl-demo" class="owl-carousel owl-theme">
+                        <div class="item"> 
+                                <div class="img">
+                                    <a href="/ford-ecosport.html">
+                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
+                                </h3>
+                                <div class="price">Call</div>
+                        </div>
+                        <div class="item"> 
+                                <div class="img">
+                                    <a href="/ford-ecosport.html">
+                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
+                                </h3>
+                                <div class="price">Call</div>
+                        </div>
+                        <div class="item"> 
+                                <div class="img">
+                                    <a href="/ford-ecosport.html">
+                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
+                                </h3>
+                                <div class="price">Call</div>
+                        </div>
+                        <div class="item"> 
+                                <div class="img">
+                                    <a href="/ford-ecosport.html">
+                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
+                                </h3>
+                                <div class="price">Call</div>
+                        </div>
+                        <div class="item"> 
+                                <div class="img">
+                                    <a href="/ford-ecosport.html">
+                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
+                                </h3>
+                                <div class="price">Call</div>
+                        </div>
+                        <div class="item"> 
+                                <div class="img">
+                                    <a href="/ford-ecosport.html">
+                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
+                                </h3>
+                                <div class="price">Call</div>
+                        </div>
+                        <div class="item"> 
+                                <div class="img">
+                                    <a href="/ford-ecosport.html">
+                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
+                                </h3>
+                                <div class="price">Call</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
     
 @endsection
 
@@ -61,6 +147,36 @@
                 pauseOnHover:false  
             });
         });
+        $(document).ready(function() {
+            var owl = $('#owl-demo');
+            owl.owlCarousel({
+                nav:true,
+                dots:false,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },            
+                    960:{
+                        items:5
+                    },
+                    1200:{
+                        items:6
+                    }
+                }
+            });
+            owl.on('mousewheel', '.owl-stage', function (e) {
+                if (e.deltaY>0) {
+                    owl.trigger('next.owl');
+                } else {
+                    owl.trigger('prev.owl');
+                }
+                e.preventDefault();
+            });
+        });
+    
     </script>
     
 @endsection
