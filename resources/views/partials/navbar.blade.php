@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img src="/images/logo/logo-binhthuanford.png" width="200" alt="" class="big-logo">
                 </a>
             </div>
@@ -34,7 +34,33 @@
                     <li><a href="#">Tin tức</a></li>
                     <li><a href="#">Tư vấn</a></li>
                     <li><a href="#contact">Liên hệ</a></li>
-                    
+                    @if (Auth::check())
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle"
+                           data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            {{ Auth::user()->name }}
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/logout"
+                                   onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><img class="circ" src="{{ Gravatar::get(Auth::user()->email)  }}"></li>
+                @else
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+
+                @endif
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

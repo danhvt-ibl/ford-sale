@@ -49,90 +49,28 @@
 
     <section class="list-car">
         <div class="container">
-                <div class="list_product_focus">
-                    <div id="owl-demo" class="owl-carousel owl-theme">
-                        <div class="item"> 
-                                <div class="img">
-                                    <a href="/ford-ecosport.html">
-                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
-                                </h3>
-                                <div class="price">Call</div>
+            <div class="list_product_focus">
+                <div id="owl-demo" class="owl-carousel owl-theme">                    
+                    <div class="item"> 
+                        <div class="img">
+                            <a href="/ford-ecosport.html">
+                                <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
+                            </a>
                         </div>
-                        <div class="item"> 
-                                <div class="img">
-                                    <a href="/ford-ecosport.html">
-                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
-                                </h3>
-                                <div class="price">Call</div>
-                        </div>
-                        <div class="item"> 
-                                <div class="img">
-                                    <a href="/ford-ecosport.html">
-                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
-                                </h3>
-                                <div class="price">Call</div>
-                        </div>
-                        <div class="item"> 
-                                <div class="img">
-                                    <a href="/ford-ecosport.html">
-                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
-                                </h3>
-                                <div class="price">Call</div>
-                        </div>
-                        <div class="item"> 
-                                <div class="img">
-                                    <a href="/ford-ecosport.html">
-                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
-                                </h3>
-                                <div class="price">Call</div>
-                        </div>
-                        <div class="item"> 
-                                <div class="img">
-                                    <a href="/ford-ecosport.html">
-                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
-                                </h3>
-                                <div class="price">Call</div>
-                        </div>
-                        <div class="item"> 
-                                <div class="img">
-                                    <a href="/ford-ecosport.html">
-                                        <img src='http://fordvietnam.com/vnt_upload/product/Ford_Ecosport/FORD-ECOSPORT-TITANIUM.jpg' alt='Ford Ecosport' />
-                                    </a>
-                                </div>
-                                <h3>
-                                    <a href="/ford-ecosport.html">Ford Ecosport</a>
-                                </h3>
-                                <div class="price">Call</div>
-                        </div>
+                        <h3>
+                            <a href="/ford-ecosport.html">Ford Ecosport</a>
+                        </h3>
+                        <div class="price">Call</div>
                     </div>
                 </div>
+            </div>
         </div>
     </section>
-    
+
+    <section class="main_content_wrap">
+        @include('partials.menu-main')
+    </section>
+    @include('partials.pop-menu')
 @endsection
 
 @section('scripts')
@@ -165,7 +103,9 @@
                     1200:{
                         items:6
                     }
-                }
+                },
+                navText: []
+                
             });
             owl.on('mousewheel', '.owl-stage', function (e) {
                 if (e.deltaY>0) {
@@ -174,6 +114,14 @@
                     owl.trigger('prev.owl');
                 }
                 e.preventDefault();
+            });
+        });
+        $(document).ready(function(){
+            $('.bxslider').bxSlider({
+                captions: true,
+                pager:false,
+                auto:true,
+                speed:1000
             });
         });
     
