@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCarsTable extends Migration
+class AddIsSubscribedToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateCarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cars', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-            $table->string('name')->unique();
-            $table->integer('user_id')->unsigned();
-            $table->string('slug')->unique();
+        Schema::table('users', function(Blueprint $table) {
+            $table->boolean('is_subscribed')->default(false)->after('email');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateCarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cars');
+        Schema::table('users', function ($table) {
+            $table->dropColumn('is_subscribed');
+        });
     }
 }

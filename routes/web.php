@@ -17,4 +17,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('car', 'CarController');
+Route::resource('car', 'CarController', ['except' => ['show', 'create']]);
+
+Route::get('car/create', ['as' => 'car.create', 'uses' => 'CarController@create']);
+Route::get( 'car/{id}-{slug?}', ['as' => 'car.show','uses' => 'CarController@show']);
+
+Route::get('admin', ['as' => 'admin', 'uses' => 'AdminController@index']);

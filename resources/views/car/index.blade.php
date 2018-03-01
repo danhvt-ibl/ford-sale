@@ -33,7 +33,7 @@
             
                         <tr>
                             <td>{{ $car->id }}</td>
-                            <td><a href="/widget/{{ $car->id }}">{{ $car->name }}</a></td>
+                            <td><a href="/car/{{ $car->id }}-{{ $car->slug }}">{{ $car->name }}</a></td>
                             <td>{{ $car->created_at }}</td>
                         </tr>
             
@@ -48,7 +48,12 @@
             Sorry, no Widgets
             
             @endif
-            
+            {{ $cars->links() }}
+            <div> <a href="/car/create">
+                <button type="button" class="btn btn-lg btn-primary">
+                    Create New
+                </button></a>
+            </div>
 </div>
 
 @endsection

@@ -1,11 +1,7 @@
 <?php
 
 namespace App;
-
-use Illuminate\Database\Eloquent\Model;
-
-class Car extends Model
+class Car extends SuperModel
 {
-    protected $fillable = ['name'];
-    
+    protected $fillable = ['name', 'slug', 'user_id'];
 }
