@@ -23,6 +23,7 @@
     {{--  MAIN partials  --}}
 
     @yield('main') 
+    @include('partials.box-support')
     <footer>
         
     </footer>   

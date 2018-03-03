@@ -11,4 +11,12 @@ class PagesController extends Controller
         $slides= DB::table('slideshow')->orderBy('image_order', 'desc')->get();
         return view('pages.index', ['slides' => $slides, 'theme_nivo' => 'default'] );
     }
+
+    public function terms() {
+        return view('pages.terms-of-service');
+    }
+
+    public function privacy() {
+        return view('pages.privacy');
+    }
 }

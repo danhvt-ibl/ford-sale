@@ -23,3 +23,10 @@ Route::get('car/create', ['as' => 'car.create', 'uses' => 'CarController@create'
 Route::get( 'car/{id}-{slug?}', ['as' => 'car.show','uses' => 'CarController@show']);
 
 Route::get('admin', ['as' => 'admin', 'uses' => 'AdminController@index']);
+
+Route::get('terms-of-service', 'PagesController@terms');
+Route::get('privacy', 'PagesController@privacy');
+
+Route::resource('profile', 'ProfileController');
+Route::get('show-profile', ['as' => 'show-profile', 'uses' => 'ProfileController@showProfileToUser']);
+Route::get('my-profile', ['as' => 'my-profile', 'uses' => 'ProfileController@myProfile']);
