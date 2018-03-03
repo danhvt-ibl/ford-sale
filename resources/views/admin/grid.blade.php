@@ -9,4 +9,9 @@
         <a href="/profile"><p>Use this link to manage your applications's profiles</p></a>
         <p><a class="btn btn-default" href="/profile" role="button">View details &raquo;</a></p>
     </div><!--/.col-xs-6.col-lg-4-->
+    <div class="col-xs-6 col-lg-4">
+        <a href="/marketing-image"><h2>Marketing Images</h2></a>
+        <p> <a href="/marketing-image">Use this link to manage your marketing images </a></p>
+        <p><a class="btn btn-default" href="/marketing-image" role="button">View details &raquo;</a></p>
+    </div><!--/.col-xs-6.col-lg-4-->
 </div><!--/row-->

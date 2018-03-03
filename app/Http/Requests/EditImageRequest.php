@@ -3,7 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-class CreateImageRequest extends FormRequest
+
+class EditImageRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -12,8 +13,9 @@ class CreateImageRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -22,11 +24,10 @@ class CreateImageRequest extends FormRequest
     public function rules()
     {
         return [
-                   'image_name' => 'alpha_num|required|unique:marketing_images',
-                   'is_active' => 'required|boolean',
-                   'is_featured' => 'required|boolean',
-                   'image' => 'required|mimes:jpeg,jpg,bmp,png|max:1000',
-                   'image_weight' => 'integer|between:1,100',
+            'is_active' => 'required|boolean',
+            'is_featured' => 'required|boolean',
+            'image' => 'mimes:jpeg,jpg,bmp,png|max:1000',
+            'image_weight' => 'integer|between:1,100',
         ];
     }
 }

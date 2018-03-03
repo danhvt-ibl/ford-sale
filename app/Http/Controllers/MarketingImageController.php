@@ -53,7 +53,8 @@ class MarketingImageController extends Controller
             'image_name'        => $request->get('image_name'),
             'image_extension'   => $request->file('image')->getClientOriginalExtension(),
             'is_active'         => $request->get('is_active'),
-            'is_featured'       => $request->get('is_featured')
+            'is_featured'       => $request->get('is_featured'),
+            'image_weight'      => $request->get('image_weight')
         ]);
         // save model
         $marketingImage->save();
@@ -128,6 +129,30 @@ class MarketingImageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $marketingImage = MarketingImage::findOrFail($id);
+        $this->deleteExistingImages($marketingImage);
+        MarketingImage::destroy($id);
+        alert()->error('Notice', 'image deleted!');
+        return redirect()->route('marketing-image.index');
+    }
+
+    /**
+    * @param EditImageRequest $request
+    * @param $marketingImage
+    */
+    private function setNewFileExtension(EditImageRequest $request, $marketingImage)
+    {
+        $marketingImage->image_extension = $request->file('image')->getClientOriginalExtension();
+    }
+
+    /**
+    * @param EditImageRequest $request
+    * @param $marketingImage
+    */
+    private function setUpdatedModelValues(EditImageRequest $request, $marketingImage)
+    {
+        $marketingImage->is_active = $request->get('is_active');
+        $marketingImage->is_featured = $request->get('is_featured');    
+        $marketingImage->image_weight = $request->get('image_weight');
     }
 }

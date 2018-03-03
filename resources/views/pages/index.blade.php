@@ -25,12 +25,29 @@
 @section('main')
     {{--  SLIDER SECTION   --}}
     <section class="slider-section">
+        @if ($notEnoughImages)
+            <div class="container"> 
+                <div class="panel panel-warning" style="margin-top:30px">
+                    <div class="panel-body">
+                        Not enough images in slider.  Populate images or remove slider include from pages.index.
+                    </div>
+                    
+                </p>
+            </div>                
+        @else
         {{--  <div id="slider-wrapper" class="theme-{{ $theme_nivo }}">       --}}
             <div id="slider_show_slider" class="nivoSlider" style="height:418px">
-                @foreach ($slides as $slide)           
-                <a href="{{ $slide->url }}" target="_self">  
-                     <img src="{{ $slide->image_url }}" alt="" 
-                        width="100%" data-thumb="{{ $slide->image_url }}" 
+                <a href="#" target="_self">  
+                    <img src="{{ $featuredImage->showImage($featuredImage, $imagePath) }}"
+                    alt="{{ $featuredImage->image_name }}" 
+                        width="100%" data-thumb="{{ $featuredImage->showImage($featuredImage, $imagePath) }}" 
+                        title="#htmlcaption">
+                </a>     
+                @foreach ($activeImages as $image)         
+                <a href="#" target="_self">  
+                     <img src="{{ $image->showImage($image, $imagePath)}}"
+                     alt="{{ $image->image_name }}" 
+                        width="100%" data-thumb="{{ $image->showImage($image, $imagePath) }}" 
                         title="#htmlcaption">
                 </a>     
                 @endforeach
@@ -44,6 +61,7 @@
                     </div> 
                                            
             </div>
+        @endif
         {{--  </div>          --}}
     </section>     
 
@@ -82,7 +100,8 @@
                 pauseTime:8000, 
                 directionNav:true , 
                 controlNav: true, 
-                pauseOnHover:false  
+                pauseOnHover:false ,
+                startSlide: 0
             });
         });
         $(document).ready(function() {

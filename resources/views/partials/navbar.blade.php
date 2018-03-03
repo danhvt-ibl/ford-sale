@@ -23,6 +23,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dòng xe <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/car">Cars</a></li>
+                            @if (Auth::check() && Auth::user()->isAdmin())
+                            <li><a href="/marketing-image">Marketing Images</a></li>
+                            @endif
                         </ul>
                     </li>            
                     <li><a href="#">Tin tức</a></li>
@@ -55,7 +58,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><img class="circ" src="{{ Gravatar::get(Auth::user()->email)  }}"></li>
+                    <li><img class="circ" src="{{ Gravatar::get(Auth::user()->email)  }}"></li>    
                 @else
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>
