@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-xs-6 col-lg-4">
+        <a href="/user"><h2>Users</h2></a>
+        <a href="/user"><p>Use this link to manage your applications's users</p></a>
+        <p><a class="btn btn-default" href="/user" role="button">View details &raquo;</a></p>
+    </div><!--/.col-xs-6.col-lg-4-->
+    <div class="col-xs-6 col-lg-4">
+        <a href="/profile"><h2>Profiles</h2></a>
+        <a href="/profile"><p>Use this link to manage your applications's profiles</p></a>
+        <p><a class="btn btn-default" href="/profile" role="button">View details &raquo;</a></p>
+    </div><!--/.col-xs-6.col-lg-4-->
+</div><!--/row-->

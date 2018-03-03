@@ -3,5 +3,12 @@
     <title>The Admin Page</title>
 @endsection
 @section('main')
-    <h1>I Am Admin</h1>
+    <div class="container">
+        <div class="page-header">
+            <h1>Admin Dashboard</h1>
+        </div>
+            
+        @include('admin.grid')
+    </div>
+    
 @endsection

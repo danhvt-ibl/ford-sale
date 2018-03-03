@@ -30,3 +30,10 @@ Route::get('privacy', 'PagesController@privacy');
 Route::resource('profile', 'ProfileController');
 Route::get('show-profile', ['as' => 'show-profile', 'uses' => 'ProfileController@showProfileToUser']);
 Route::get('my-profile', ['as' => 'my-profile', 'uses' => 'ProfileController@myProfile']);
+
+Route::resource('user', 'UserController');
+
+Route::get('settings', 'SettingsController@edit');
+Route::post('settings', ['as' => 'userUpdate', 'uses' => 'SettingsController@update']);
+
+Route::resource('marketing-image', 'MarketingImageController');

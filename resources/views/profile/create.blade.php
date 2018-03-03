@@ -12,11 +12,8 @@
         <li><a href='/'>Home</a></li>
         <li class='active'>Create Profile</li>
     </ol>
-
     <h2>Create Your Profile</h2>
-
     <hr/>
-
     <form class="form" role="form" method="POST" action="{{ url('/profile') }}">
 
     {{ csrf_field() }}
@@ -31,7 +28,6 @@
                 <strong>{{ $errors->first('first_name') }}</strong>
                 </span>
             @endif
-
         </div>
 
         <!-- last_name Form Input -->
@@ -43,7 +39,6 @@
                 <strong>{{ $errors->first('last_name') }}</strong>
                 </span>
             @endif
-
         </div>
 
         <!-- birthdate Form Input -->

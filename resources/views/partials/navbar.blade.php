@@ -22,13 +22,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dòng xe <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                            <li><a href="/car">Cars</a></li>
                         </ul>
                     </li>            
                     <li><a href="#">Tin tức</a></li>
@@ -42,6 +36,12 @@
                             {{ Auth::user()->name }}
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            @if(Auth::user()->isAdmin())
+                            <li><a href="/admin">Admin</a></li>
+                            @endif
+                            <li><a href="/user">Users</a></li>
+                            <li><a href="/my-profile">Profile</a></li>
+                            <li><a href="/settings">Settings</a></li>
                             <li>
                                 <a href="/logout"
                                    onclick="event.preventDefault();
@@ -59,7 +59,6 @@
                 @else
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>
-
                 @endif
                 </ul>
             </div><!--/.nav-collapse -->
