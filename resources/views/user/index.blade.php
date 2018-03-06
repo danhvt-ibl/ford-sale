@@ -12,9 +12,13 @@
             <li><a href='/'>Home</a></li>
             <li class='active'>Users</li>
         </ol>
-    
+        
         <h2>Users</h2>
-    
+        <div id="app">
+            <user-chart></user-chart>
+        </div>
+       
+
         <hr/>
     
         @if($users->count() > 0)
