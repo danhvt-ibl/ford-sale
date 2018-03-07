@@ -3,13 +3,13 @@
 @section('main')
 <div class="container">
     <ol class="breadcrumb">
-        <li><a href="/">Home</a></li>
-        <li>Login</li>
+        <li><a href="/">Trang chủ</a></li>
+        <li>Đăng nhập</li>
     </ol>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading">Đăng nhập</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}

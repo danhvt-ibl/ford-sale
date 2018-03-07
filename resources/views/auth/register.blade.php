@@ -3,8 +3,8 @@
 @section('main')
 <div class="container">
     <ol class="breadcrumb">
-        <li><a href="/">Home</a></li>
-        <li>Register</li>
+        <li><a href="/">Trang chủ</a></li>
+        <li>Đăng ký</li>
     </ol>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

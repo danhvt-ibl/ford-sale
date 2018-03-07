@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('title')
     <title>The Admin Page</title>
 @endsection
@@ -7,7 +7,8 @@
         <div class="page-header">
             <h1>Admin Dashboard</h1>
         </div>
-        <user-chart></user-chart>
+        {{--  <user-chart></user-chart>  --}}
+       
         @include('admin.grid')
     </div>
     

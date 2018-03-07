@@ -17,16 +17,18 @@
 
 </head>
 <body>   
-    <header>
-        @include('partials.navbar')
-    </header>
+    
+    @include('partials.header')
+    
     {{--  MAIN partials  --}}
-
-    @yield('main') 
-    @include('partials.box-support')
-    <footer>
-        
-    </footer>   
+    <!--Site-Content-->
+    <div id="#content" class="site-content">
+        <div class="container">            
+                @includeWhen(Request::is('/'), 'partials.slider-area')
+            @yield('main') 
+        </div>
+    </div>
+    @include('partials.footer')
     
     {{---------------------}}           
     @include('layouts.scripts')

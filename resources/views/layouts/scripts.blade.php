@@ -1,24 +1,30 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
-{{--  <script src="{{ elixir('js/app.js') }}"></script>  --}}
-<script src="/js/app.js"></script>
-<script src="/js/jquery-1.8.3.min.js"></script>    
-<script src="/js/owl.carousel.min.js"></script>    
-<script src="/js/jquery.bxslider.js"></script>  
+<!--==============================
+    Footer js pluging -->
+<!-- jQuery -->
+<script src="/js/jquery-1.12.0.min.js"></script>
+<!-- modernizr -->
+<script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+<!-- Bootstrap -->
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+<script type="text/javascript" src="/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<!-- wow js-->
+<script type="text/javascript" src="/js/wow.min.js"></script>
+<!-- venobox js-->
+<script type="text/javascript" src="/js/venobox.min.js"></script>
+<!-- mouse hover js-->
+<script src="/js/jquery.directional-hover.js"></script>
+<!-- owl js -->
+<script src="/js/owl.carousel.min.js"></script>
+<!-- magnific popup -->
+<script src="/js/jquery.magnific-popup.min.js"></script>
+<!-- smoothscroll -->
+<script src="/js/smoothscroll.js"></script>
+<!-- settings -->
+<script type="text/javascript" src="/js/setting.js"></script>
+<script type="text/javascript" src="/js/setting-revolution-1.js"></script>
 <script src="/js/sweetalert.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#box_support .box_support_wrap').append('<li id="top">&nbsp;</li>');
-        $(window).scroll(function() {
-            if($(window).scrollTop() != 0) {
-                $('#top').fadeIn();
-            }
-        });
-        $('#top').click(function() {
-            $('html, body').animate({scrollTop:0},500);
-        });
-    });
-    
-</script>
 <script>
     $.ajaxSetup({
         headers: {
