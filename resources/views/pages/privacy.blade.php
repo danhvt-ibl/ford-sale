@@ -3,6 +3,10 @@
 @section('main')
 
     <div class="container">
+        <ol class='breadcrumb'>
+            <li><a href='/'>Trang chủ</a></li>
+            <li class='active'>Chính sách bảo mật</li>
+        </ol>
         <div class="page-header">
             <h1>Chính sách bảo mật</h1>
         </div>

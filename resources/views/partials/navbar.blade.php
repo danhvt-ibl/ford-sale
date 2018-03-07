@@ -17,20 +17,25 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#about">Giới thiệu</a></li>
-                    <li class="active"><a href="#">Khuyến mãi</a></li>
+                    <li class="{{ (Request::is('gioi-thieu') ? 'active' : '') }} hvr-underline-from-left"><a href="/gioi-thieu">Giới thiệu</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dòng xe <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/car">Cars</a></li>
-                            @if (Auth::check() && Auth::user()->isAdmin())
+                            <div class="container">
+                                <li><a href="/car">Dòng xe</a></li>
+                            </div>
+                            
+                            {{--  @if (Auth::check() && Auth::user()->isAdmin())
                             <li><a href="/marketing-image">Marketing Images</a></li>
-                            @endif
+                            @endif  --}}
                         </ul>
                     </li>            
-                    <li><a href="#">Tin tức</a></li>
-                    <li><a href="#">Tư vấn</a></li>
-                    <li><a href="#contact">Liên hệ</a></li>
+                    <li class="{{ (Request::is('bang-gia-xe') ? 'active' : '') }} hvr-underline-from-left"><a href="bang-gia-xe">Bảng giá xe</a></li>
+                    <li class="{{ (Request::is('tin-tuc') ? 'active' : '') }} hvr-underline-from-left"><a href="#">Tin tức</a></li>
+                    <li class="{{ (Request::is('tu-van') ? 'active' : '') }} hvr-underline-from-left"><a href="#">Tư vấn</a></li>
+                    <li class="{{ (Request::is('lien-he') ? 'active' : '') }} hvr-underline-from-left"><a href="/lien-he">Liên hệ</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle"
@@ -60,8 +65,8 @@
                     </li>
                     <li><img class="circ" src="{{ Gravatar::get(Auth::user()->email)  }}"></li>    
                 @else
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Register</a></li>
+                    <li><a href="/login"><i class="glyphicon glyphicon-lock"></i> Đăng nhập</a></li>
+                    {{--  <li><a href="/register">Register</a></li>  --}}
                 @endif
                 </ul>
             </div><!--/.nav-collapse -->

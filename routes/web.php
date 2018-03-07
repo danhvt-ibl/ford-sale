@@ -24,8 +24,11 @@ Route::get( 'car/{id}-{slug?}', ['as' => 'car.show','uses' => 'CarController@sho
 
 Route::get('admin', ['as' => 'admin', 'uses' => 'AdminController@index']);
 
-Route::get('terms-of-service', 'PagesController@terms');
-Route::get('privacy', 'PagesController@privacy');
+// PAGEs Controller
+Route::get('dieu-khoan-dich-vu', 'PagesController@terms');
+Route::get('chinh-sach-bao-mat', 'PagesController@privacy');
+Route::get('lien-he', ['as' => 'pages.contact', 'uses' =>'PagesController@contact']);
+Route::get('gioi-thieu', ['as' => 'pages.welcome', 'uses' =>'PagesController@welcome']);
 
 Route::resource('profile', 'ProfileController');
 Route::get('show-profile', ['as' => 'show-profile', 'uses' => 'ProfileController@showProfileToUser']);
