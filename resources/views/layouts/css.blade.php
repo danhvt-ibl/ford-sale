@@ -1,23 +1,24 @@
 
-<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 <!-- FONT AWESOME -->
-<link rel="stylesheet" href="/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/eleganticon.css">
+<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/eleganticon.css') }}">
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="/rs-plugin/css/style.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/rs-plugin/css/navstylechange.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{{ asset('rs-plugin/css/style.css') }}" media="screen" />
+<link rel="stylesheet" type="text/css" href="{{ asset('rs-plugin/css/navstylechange.css') }}" media="screen" />
 @if (!Request::is('lien-he'))
-<link rel="stylesheet" type="text/css" href="/rs-plugin/css/noneed.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{{ asset('rs-plugin/css/noneed.css') }}" media="screen" />
 @endif
-<link rel="stylesheet" type="text/css" href="/rs-plugin/css/settings.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{{ asset('rs-plugin/css/settings.css') }}" media="screen" />
 <!-- MAGNIFIC POPUP -->
-<link rel="stylesheet" href="/css/magnific-popup.css">
+<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}" >
+{{--  <link rel="stylesheet" href="/css/magnific-popup.css">  --}}
 <!-- OWL CAROUSEL -->
-<link rel="stylesheet" href="/css/owl.carousel.css">
+<link rel="stylesheet"  href="{{ asset('css/owl.carousel.css') }}">
 <!-- ANIMATE CSS -->
-<link rel="stylesheet" href="/css/animate.css">
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 <!-- Google fonts -->
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,500,600,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Raleway:600,700' rel='stylesheet' type='text/css'>

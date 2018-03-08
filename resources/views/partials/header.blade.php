@@ -14,7 +14,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="right">
                         <ul>
-                            <li class="toggle">
+                            {{--  <li class="toggle">
                                 <span>USD</span> <i class="fa fa-angle-down"></i>
                                 <ul>
                                     <li><a href="#">USD</a>
@@ -22,10 +22,30 @@
                                     <li><a href="#">EUR</a>
                                     </li>
                                 </ul>
+                            </li>  --}}
+                            @if (Auth::check())
+                            <li class="toggle dropdown-user">                       
+                                <span>{{ Auth::user()->name }}</span> <i class="fa fa-angle-down"></i>
+                                <ul>
+                                    <li><a href="/admin"><i class="fa fa-tachometer" aria-hidden="true"></i> Trang quản trị</a></li>
+                                    <li>
+                                        <a href="/setting"><i class="fa fa-cog" aria-hidden="true"></i> Cài đặt</a>
+                                    </li>
+                                    <li>
+                                        <a href="/logout" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                            <i class="fa fa-lock" aria-hidden="true"></i> Đăng xuất</a>
+                                        <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li> 
+                                                                          
+                                </ul>                               
                             </li>
-                            <li>
-                                <a href="/login">Đăng nhập</a>
-                            </li>
+                            <li><img class="circ" src="{{ Gravatar::get(Auth::user()->email)  }}"></li>                            
+                            @else
+                            <li><a href="/login"><i class="fa fa-lock" aria-hidden="true"></i> Đăng nhập</a></li>
+                            <li><a href="/register"><i class="fa fa-user-plus" aria-hidden="true"></i></i> Đăng kí</a></li>
+                            @endif
                         </ul>
                     </div>
                     <!--/.right-->
@@ -85,7 +105,7 @@
                                     <i class="icon_phone"></i>
                                     <div class="phone">
                                         <span class="phone-label">Sales:</span>
-                                        <span class="phone-number heading-font"><a href="tel:09.086.22.086">0902.47.37.57</a></span>
+                                        <span class="phone-number heading-font"><a href="tel:0902.47.37.57">0902.47.37.57</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -117,11 +137,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li>
+                    <li class="{{ Request::is('gioi-thieu') ? 'active' : '' }}">
                         <a href="/gioi-thieu" role="button">Giới thiệu</a>
                     </li> 
                     <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dòng xe</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tìm kiếm xe</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -183,9 +203,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Công nghệ</a>
+                    <li>
+                        <a href="contact.html">So sánh</a>
                     </li>
-                    <li><a href="/lien-he">Liên hệ</a>
+                    <li class="{{ Request::is('lien-he') ? 'active' : '' }}">
+                        <a href="/lien-he">Liên hệ</a>
                     </li>
                 </ul>
             </div>

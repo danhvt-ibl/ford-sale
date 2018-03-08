@@ -1407,7 +1407,7 @@ span.close-icon {
 .header-top .right ul > li i {
   margin-right: 2px;
   vertical-align: middle;
-  color: #fff;
+  /* color: #fff; */
   margin-top: -2px;
 }
 
@@ -1458,6 +1458,7 @@ span.close-icon {
   padding: 0 10px;
   width: 100%;
   margin: 0;
+  text-align: left
 }
 
 .header-top .right ul li.toggle > ul li:hover {

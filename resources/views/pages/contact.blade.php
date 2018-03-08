@@ -80,16 +80,16 @@
         <div class="col-md-12">
             <div class="contact login">
                 <div class="heading-title">
-                    <h3 class="reply-title">leave a reply</h3>
+                    <h3 class="reply-title">Để lại một trả lời</h3>
                 </div>
                 <!--/.heading-title-->
                 <form class="contact-form clearfix" action="#">
                     <div class="col-md-3 col-sm-6">
                         <div class="your-name">
-                            <label for="your-name">Name <span class="required">*</span>
+                            <label for="your-name">Tên <span class="required">*</span>
                             </label>
                             <br>
-                            <input class="input-field" type="text" name="your-name" value="" id="your-name">
+                            <input class="input-field" type="text" name="name" value="" id="your-name">
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -99,16 +99,16 @@
                             <label for="your-email">Email <span class="required">*</span>
                             </label>
                             <br>
-                            <input class="input-field" type="email" name="your-email" value="" id="your-email">
+                            <input class="input-field" type="email" name="email" value="" id="your-email">
                         </div>
                     </div>
                     <!--/.col-md-3-->
 
                     <div class="col-md-3 col-sm-6">
                         <div class="email">
-                            <label for="your-subject">Subject</label>
+                            <label for="your-subject">Chủ đề</label>
                             <br>
-                            <input class="input-field" type="text" name="your-subject" value="" id="your-subject">
+                            <input class="input-field" type="text" name="subject" value="" id="your-subject">
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -116,14 +116,14 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="your-website">
                             <label for="your-website">Website</label>
-                            <input class="input-field" type="text" name="your-website" value="" id="your-website">
+                            <input class="input-field" type="text" name="website" value="" id="your-website">
                         </div>
                     </div>
                     <!--/.col-md-3-->
 
                     <div class="col-md-12">
                         <div class="your-message">
-                            <label for="your-message">Your Message</label>
+                            <label for="your-message">Tin nhắn của bạn</label>
                             <br>
                             <textarea name="your-message" cols="10" rows="6" id="your-message"></textarea>
                         </div>
@@ -131,7 +131,7 @@
                     <!--/.col-md-3-->
 
                     <div class="col-md-12 text-right">
-                        <button type="submit" class="btn-submit btn-hover">Submit</button>
+                        <button type="submit" class="btn-submit btn-hover">Gửi</button>
                     </div>
                 </form>
                 <!--/.contant-form-->

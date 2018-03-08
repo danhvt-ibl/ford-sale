@@ -14,3 +14,4 @@
 <meta property="og:description" content="Bình Thuận Ford - 0902 473 757 - Tiến Bình Thuận Ford Việt Nam - Ford Explorer, Ford Ranger, Ford Everest, Ford Ecosport, Ford Transit, Ford Focus, Ford Fiesta Phan Thiết..." />
 <meta property="og:site_name" content="Bình Thuận Ford - 0902 473 757 - Tiến Bình Thuận Ford Việt Nam" />
 <meta property="og:url" content="http://muaxefordbinhthuan.com/" />
+<meta property="og:locale" content="vi_VN">

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCarsTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateCarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cars', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('name')->unique();
-            $table->integer('user_id')->unsigned();
-            $table->bigInteger('verhicle_ID')->nullable();
-            $table->integer('price')->unsigned();
-            $table->string('slug')->unique();
+            $table->string('comment_email', 100);
+            $table->mediumText('comment_author');
+            $table->text('comment_content');
+            $table->string('comment_subject', 200);
         });
     }
 
@@ -31,6 +30,6 @@ class CreateCarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cars');
+        Schema::dropIfExists('comments');
     }
 }

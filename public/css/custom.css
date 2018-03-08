@@ -994,3 +994,21 @@ a.custom-button:hover .round i {
         width: 100% !important;
     }
 }
+
+.circ{
+  width : 32px;
+  vertical-align: middle;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #fff;
+  position: absolute; 
+  top: -5px
+  /* margin-top: 5px; */
+  }
+.circ:hover{
+  background: #289014
+}
+
+.dropdown-user ul {
+  left: -15px !important;
+  width: 170px !important;
+}
