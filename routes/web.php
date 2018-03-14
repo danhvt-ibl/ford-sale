@@ -15,8 +15,6 @@ Route::get('/', 'PagesController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::resource('car', 'CarController', ['except' => ['show', 'create']]);
 
 Route::get('car/create', ['as' => 'car.create', 'uses' => 'CarController@create']);
@@ -41,4 +39,6 @@ Route::post('settings', ['as' => 'userUpdate', 'uses' => 'SettingsController@upd
 
 Route::resource('marketing-image', 'MarketingImageController');
 
-Route::get('api/user-chart', 'ApiController@userChartData');
+// Route::get('api/user-chart', 'ApiController@userChartData');
+
+Route::resource('dong-xe', 'VerhicleController');

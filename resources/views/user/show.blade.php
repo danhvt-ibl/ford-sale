@@ -1,11 +1,11 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('title')
     <title>{{ $user->name }}</title>
 @endsection
 
 @section('main')
-    <div class="container">
+    
         @if(Auth::user()->isAdmin())
             <ol class='breadcrumb'>
                 <li><a href='/'>Home</a></li>
@@ -98,8 +98,6 @@
                 </tbody>
 
             </table>
-
-        </div>
     </div>
 @endsection
 

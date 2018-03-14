@@ -14,15 +14,6 @@
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="right">
                         <ul>
-                            {{--  <li class="toggle">
-                                <span>USD</span> <i class="fa fa-angle-down"></i>
-                                <ul>
-                                    <li><a href="#">USD</a>
-                                    </li>
-                                    <li><a href="#">EUR</a>
-                                    </li>
-                                </ul>
-                            </li>  --}}
                             @if (Auth::check())
                             <li class="toggle dropdown-user">                       
                                 <span>{{ Auth::user()->name }}</span> <i class="fa fa-angle-down"></i>

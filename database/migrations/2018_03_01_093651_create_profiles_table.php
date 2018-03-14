@@ -20,6 +20,8 @@ class CreateProfilesTable extends Migration
             $table->string('last_name', 60);
             $table->date('birthdate');
             $table->boolean('gender');
+            $table->text('address');
+            $table->text('aboutme');
             $table->timestamps();
         });
     }

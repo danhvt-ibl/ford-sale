@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Verhicle;
 use Illuminate\Http\Request;
 
 class VerhicleController extends Controller
 {
-    use OwnsRecord;
     public function __construct() {
-        $this->middleware(['auth', 'admin'], ['except' => ['index', 'show']] );
+        $this->middleware(['auth', 'admin']);
     }
 
     /**
@@ -20,8 +20,8 @@ class VerhicleController extends Controller
     {
         // Fetch records in pagination so only 10 categories per page
         // To get all records you may use get() method
-        $verhicle = Category::paginate(10);
-        return view('verhicle.index', ['verhicle' => $verhicle]);
+        $verhicles = Verhicle::paginate(10);
+        return view('verhicle.index', ['verhicles' => $verhicles]);
     }
 
     /**
