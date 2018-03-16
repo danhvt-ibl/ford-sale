@@ -71,7 +71,9 @@
                     <h4 class="title">Edit Profile</h4>
                 </div>
                 <div class="content">
-                    <form>
+                    <form class="form" role="form" method="POST" action="{{ url('/profile/'. $profile->id) }}">
+                        <input type="hidden" name="_method" value="patch">
+                        {{ csrf_field() }}
                         <div class="row">
                             <div class="col-md-5">
                                 <div class="form-group">
@@ -89,15 +91,25 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Họ</label>
-                                    <input type="text" class="form-control border-input" placeholder="Company" value="{{ $profile->first_name }}">
+                                <div class="form-group {{ $errors->has('first_name') ? ' has-error' : '' }}">
+                                    <label>Họ</label> 
+                                    <input type="text" class="form-control border-input" placeholder="Họ" value="{{ $profile->first_name }}">
+                                    @if ($errors->has('first_name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('first_name') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group {{ $errors->has('last_name') ? ' has-error' : '' }}">
                                     <label>Tên</label>
                                     <input type="text" class="form-control border-input" placeholder="Last Name" value="{{ $profile->last_name }}">
+                                    @if ($errors->has('last_name'))    
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -105,23 +117,42 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Address</label>
+                                    <label>Địa chỉ</label>
                                     <input type="text" class="form-control border-input" placeholder="Home Address" value="{{ $profile->address }}">
+                                    @if ($errors->has('address'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                        </span>    
+                                    @endif
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="form-group">
+                                <div class="form-group {{ $errors->has('birthdate') ? ' has-error' : '' }}">
                                     <label>Ngày sinh</label>
                                     <input type="text" class="form-control border-input" placeholder="Ngày sinh của bạn" value="{{ $profile->birthdate }}">
+                                    @if ($errors->has('birthdate'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('birthdate') }}</strong>
+                                        </span>    
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-group">
+                                <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
                                     <label>Giới tính</label>
-                                    <input type="text" class="form-control border-input" placeholder="Country" value="{{ $profile->gender }}">
+                                    <select class="form-control border-input" id="gender" name="gender">
+                                        <option value="{{ $profile->gender }}">{{ $profile->showGender($profile->gender) }}</option>
+                                        <option value="1">Male</option>
+                                        <option value="0">Female</option>
+                                    </select>
+                                    @if ($errors->has('gender'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -143,7 +174,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-info btn-fill btn-wd">Update Profile</button>
+                            <button type="submit" class="btn btn-info btn-fill btn-wd">Cập nhật Profile</button>
                         </div>
                         <div class="clearfix"></div>
                     </form>

@@ -65,15 +65,14 @@
             <div class="form-group{{ $errors->has('birthdate') ? ' has-error' : '' }}">
     
                 <label class="control-label">Birthdate</label>
-                    <div>
-                    {{  Form::date('birthdate', $profile->birthdate) }}
-                    </div>
+                <div>
+                {{  Form::date('birthdate', $profile->birthdate) }}
+                </div>
     
                 @if ($errors->has('birthdate'))
                     <span class="help-block">
                     <strong>{{ $errors->first('birthdate') }}</strong>
-                    </span>
-    
+                    </span>    
                 @endif
     
             </div>
