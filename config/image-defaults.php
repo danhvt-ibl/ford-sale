@@ -19,4 +19,14 @@ return [
             'thumbHeight'           => 60,
             'thumbWidth'            => 60,
         ],
+
+        'verhicleImage' => [
+            'destinationFolder'     => '/images/verhicle/',
+            'destinationThumbnail'      => '/images/verhicle/thumbnails/',
+            'thumbPrefix'           => 'thumb-',
+            'imagePath'             => '/images/verhicle/',
+            'thumbnailPath'         => '/images/verhicle/thumbnails/thumb-',
+            'thumbHeight'           => 100,
+            'thumbWidth'            => 100,
+        ],
 ];

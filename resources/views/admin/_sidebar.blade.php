@@ -21,38 +21,20 @@
         </li>
         <li class="{{Request::is('dong-xe') ? 'active' : ''}}">
             <a href="/dong-xe">
-                <i class="ti-view-list-alt"></i>
-                <p>Table List</p>
+                <i class="ti-car"></i>
+                <p>Dòng xe</p>
             </a>
         </li>
-        <li>
-            <a href="typography.html">
-                <i class="ti-text"></i>
-                <p>Typography</p>
-            </a>
-        </li>
-        <li>
+        <li class="{{Request::is('marketing-image') ? 'active' : ''}}">
             <a href="/marketing-image">
-                <i class="ti-pencil-alt2"></i>
-                <p>Icons</p>
+                <i class="ti-gallery"></i>
+                <p>Gallery</p>
             </a>
         </li>
-        <li>
-            <a href="maps.html">
-                <i class="ti-map"></i>
-                <p>Maps</p>
-            </a>
-        </li>
-        <li>
-            <a href="notifications.html">
-                <i class="ti-bell"></i>
-                <p>Notifications</p>
-            </a>
-        </li>
-        <li class="active-pro">
-            <a href="upgrade.html">
-                <i class="ti-export"></i>
-                <p>Upgrade to PRO</p>
+        <li class="{{Request::is('bai-dang') ? 'active' : ''}}">
+            <a href="/bai-dang">
+                <i class="ti-layout-list-post"></i>
+                <p>Bài đăng</p>
             </a>
         </li>
     </ul>

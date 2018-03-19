@@ -154,7 +154,10 @@ class ProfileController extends Controller
         $profile->update(['first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'gender' => $request->gender,
-            'birthdate' => $request->birthdate]);
+            'birthdate' => $request->birthdate,
+            'aboutme' => $request->aboutme,
+            'address' => $request->address
+            ]);
         alert()->success('Congrats!', 'You updated your profile');
         return Redirect::route('profile.show', ['profile' => $profile]);
     }

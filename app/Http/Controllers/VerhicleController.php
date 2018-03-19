@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Verhicle;
+use App\Traits\ManagesImages;
+use App\Http\Requests\CreateImageRequest;
 use Illuminate\Http\Request;
 
 class VerhicleController extends Controller
 {
+    use ManagesImages;
     public function __construct() {
         $this->middleware(['auth', 'admin']);
+        $this->setImageDefaultsFromConfig('verhicleImage');
     }
 
     /**
@@ -42,7 +46,21 @@ class VerhicleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //create new instance of model to save from form
+        $verhicle = new Verhicle([
+            'name'                  => $request->get('name'),
+            'image_name'            => $request->get('name'),
+            'image_extension'       => $request->file('image')->getClientOriginalExtension(),
+            'category'              => $request->get('category')
+        ]);
+        // save model
+        $verhicle->save();
+        // get instance of file
+        $file = $this->getUploadedFile();
+        // pass in the file and the model
+        $this->saveImageFiles($file, $verhicle);
+        alert()->success('Congrats!', 'Thêm dòng xe thành công!');
+        return redirect()->route('dong-xe.index', [$verhicle]);
     }
 
     /**

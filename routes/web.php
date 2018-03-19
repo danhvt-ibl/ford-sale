@@ -42,3 +42,4 @@ Route::resource('marketing-image', 'MarketingImageController');
 // Route::get('api/user-chart', 'ApiController@userChartData');
 
 Route::resource('dong-xe', 'VerhicleController');
+Route::resource('bai-dang', 'PostsController');

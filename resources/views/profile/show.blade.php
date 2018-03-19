@@ -84,7 +84,7 @@
                             <div class="col-md-7">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Địa chỉ email </label>
-                                    <input type="email" class="form-control border-input" placeholder="Email" value="{{ Auth::user()->email }}">
+                                    <input type="email" readonly class="form-control border-input" placeholder="Email" value="{{ Auth::user()->email }}">
                                 </div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                             <div class="col-md-6">
                                 <div class="form-group {{ $errors->has('first_name') ? ' has-error' : '' }}">
                                     <label>Họ</label> 
-                                    <input type="text" class="form-control border-input" placeholder="Họ" value="{{ $profile->first_name }}">
+                                    <input type="text" name="first_name" class="form-control border-input" placeholder="Họ" value="{{ $profile->first_name }}">
                                     @if ($errors->has('first_name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('first_name') }}</strong>
@@ -104,7 +104,7 @@
                             <div class="col-md-6">
                                 <div class="form-group {{ $errors->has('last_name') ? ' has-error' : '' }}">
                                     <label>Tên</label>
-                                    <input type="text" class="form-control border-input" placeholder="Last Name" value="{{ $profile->last_name }}">
+                                    <input type="text" name="last_name" class="form-control border-input" placeholder="Last Name" value="{{ $profile->last_name }}">
                                     @if ($errors->has('last_name'))    
                                         <span class="help-block">
                                         <strong>{{ $errors->first('last_name') }}</strong>
@@ -118,7 +118,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Địa chỉ</label>
-                                    <input type="text" class="form-control border-input" placeholder="Home Address" value="{{ $profile->address }}">
+                                    <input type="text" name="address" class="form-control border-input" placeholder="Home Address" value="{{ $profile->address }}">
                                     @if ($errors->has('address'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('address') }}</strong>
@@ -132,7 +132,7 @@
                             <div class="col-md-4">
                                 <div class="form-group {{ $errors->has('birthdate') ? ' has-error' : '' }}">
                                     <label>Ngày sinh</label>
-                                    <input type="text" class="form-control border-input" placeholder="Ngày sinh của bạn" value="{{ $profile->birthdate }}">
+                                    <input type="text" name="birthdate" class="form-control border-input" placeholder="Ngày sinh của bạn" value="{{ $profile->birthdate }}">
                                     @if ($errors->has('birthdate'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('birthdate') }}</strong>
@@ -158,7 +158,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Ngày đăng ký</label>
-                                    <input type="number" class="form-control border-input" placeholder="{{ $profile->created_at }}">
+                                    <input type="number" readonly class="form-control border-input" placeholder="{{ $profile->created_at }}">
                                 </div>
                             </div>
                         </div>
@@ -167,7 +167,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>About Me</label>
-                                    <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">
+                                    <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike" name="aboutme">
                                             {{ $profile->aboutme }}
                                     </textarea>
                                 </div>

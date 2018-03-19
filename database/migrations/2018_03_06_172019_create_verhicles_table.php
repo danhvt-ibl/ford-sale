@@ -17,7 +17,10 @@ class CreateVerhiclesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name')->unique();
-            $table->string('thumnail_url');
+            $table->string('image_name')->unique();
+            $table->string('image_extension', 10);
+            $table->string('category');
+            $table->integer('year');
         });
     }
 
