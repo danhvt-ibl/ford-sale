@@ -34,6 +34,7 @@
     </table>
 @else
     <div>Sorry, no profiles</div>
+    <a class="btn btn-success" href="/profile/create">Add profile</a>
 @endif
 {{ $profiles->links() }}
     

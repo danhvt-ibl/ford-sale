@@ -8,15 +8,8 @@
 
 @section('main')
 <div class="container">
-    <ol class='breadcrumb'>
-        <li><a href='/'>Home</a></li>
-        <li class='active'>Marketing Images</li>
-    </ol>
-
     <h2>Marketing Images</h2>
-
     <hr/>
-
     @if($marketingImages->count() > 0)
 
         <table class="table table-hover table-bordered table-striped">

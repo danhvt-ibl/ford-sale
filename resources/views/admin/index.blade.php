@@ -16,7 +16,7 @@
                     <div class="col-xs-7">
                         <div class="numbers">
                             <p>Capacity</p>
-                            105GB
+                            10GB
                         </div>
                     </div>
                 </div>
