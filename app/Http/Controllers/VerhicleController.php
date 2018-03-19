@@ -25,7 +25,8 @@ class VerhicleController extends Controller
         // Fetch records in pagination so only 10 categories per page
         // To get all records you may use get() method
         $verhicles = Verhicle::paginate(10);
-        return view('verhicle.index', ['verhicles' => $verhicles]);
+        $thumbnailPath = $this->thumbnailPath;
+        return view('verhicle.index', compact('verhicles', 'thumbnailPath'));
     }
 
     /**

@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\ShowsImages;
 
 class Verhicle extends Model
 {
+    use ShowsImages;
+
     protected $fillable = ['name', 
         'year',
         'image_name',

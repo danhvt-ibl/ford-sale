@@ -21,15 +21,17 @@
 
         <tbody>
     
-        {{--  @foreach($cars as $car)
-
-            <tr>
-                <td>{{ $car->id }}</td>
-                <td><a href="/car/{{ $car->id }}-{{ $car->slug }}">{{ $car->name }}</a></td>
-                <td>{{ $car->created_at }}</td>
-            </tr>
-
-            @endforeach  --}}
+            @foreach($verhicles as $verhicle)
+                <tr>
+                    <td><a href="/dong-xe/{{ $verhicle->id }}">
+                    <img src="{{ $verhicle->showImage($verhicle, $thumbnailPath) }}">
+                    </a></td>
+                    <td><a href="/marketing-image/{{ $verhicle->id }}">
+                        {{ $verhicle->name }}</a></td>                    
+                    </td>
+                    <td>{{ $verhicle->created_at }}</td>
+                </tr>
+            @endforeach
 
         </tbody>
 
