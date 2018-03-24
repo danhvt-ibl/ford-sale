@@ -37,5 +37,17 @@
                 <p>Bài đăng</p>
             </a>
         </li>
+        <li class="{{Request::is('comments') ? 'active' : ''}}">
+            <a href="/comments">
+                <i class="ti-comment"></i>
+                <p>Comments</p>
+            </a>
+        </li>
+        <li class="{{Request::is('plugins') ? 'active' : ''}}">
+            <a href="/plugins">
+                <i class="ti-plug"></i>
+                <p>Plugins</p>
+            </a>
+        </li>
     </ul>
 </div>
